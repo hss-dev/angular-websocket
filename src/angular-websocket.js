@@ -361,12 +361,12 @@
       }
 
       // CommonJS
-      if (typeof exports === 'object' && require) {
-        try {
-          ws = require('ws');
-          Socket = (ws.Client || ws.client || ws);
-        } catch(e) {}
-      }
+//      if (typeof exports === 'object' && require) {
+//        try {
+//          ws = require('ws');
+//          Socket = (ws.Client || ws.client || ws);
+//        } catch(e) {}
+//      }
 
       // Browser
       Socket = Socket || $window.WebSocket || $window.MozWebSocket;
