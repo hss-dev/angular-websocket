@@ -195,9 +195,10 @@
             } else {
                 self.notifyCloseCallbacks(event);
                 if (typeof autoApply === 'undefined') {
-                    autoApply = true;
+                    self.safeDigest(true);
+                } else {
+                    self.safeDigest(autoApply);
                 }
-                self.safeDigest(autoApply);
             }
             if ((this.reconnectIfNotNormalClose && event.code !== this._normalCloseCode) || this._reconnectableStatusCodes.indexOf(event.code) > -1) {
                 this.reconnect();
@@ -213,9 +214,10 @@
             } else {
                 self.notifyErrorCallbacks(event);
                 if (typeof autoApply === 'undefined') {
-                    autoApply = true;
+                    self.safeDigest(true);
+                } else {
+                    self.safeDigest(autoApply);
                 }
-                self.safeDigest(autoApply);
             }
         };
 
